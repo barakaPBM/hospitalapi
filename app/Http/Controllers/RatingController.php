@@ -10,7 +10,7 @@ use App\Http\Requests\UserRatingRequest;
 
 class RatingController extends Controller
 {
-    //Method for creating a product
+    //Method for creating a rating
     public function store(UserRatingRequest $request)
     {
         $data = $request->validated();
