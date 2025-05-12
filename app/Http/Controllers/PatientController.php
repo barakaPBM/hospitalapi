@@ -26,10 +26,15 @@ class PatientController extends Controller
 
         $response = Http::post('http://41.188.172.204:3033/patient-registration', $validated);
 
+        // dd($response);
+        $responseArray = $response->json();
+
+    
+        $data = $responseArray['data'];
         if ($response->successful()) {
             return response()->json([
                 'message' => 'Patient registered successfully.',
-                'Check_In_Date_And_Time' => $response['Check_In_Date_And_Time'] ?? null
+                'Check_In_Date_And_Time' => $data['Check_In_Date_And_Time'] ?? null
             ]);
         }
 

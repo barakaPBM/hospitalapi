@@ -15,4 +15,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('destroy/{id}', [App\Http\Controllers\RatingController::class, 'destroy']);
 });
 
+
 Route::post('register', [PatientController::class, 'register']);
